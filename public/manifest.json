@@ -1,10 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "DraftEase",
+    "name": "Note Ease",
     "version": "1.0.0",
     "action": {
         "default_popup": "index.html"
     },
+    "description": "Create and save notes easily.",
     "permissions": [
         "scripting"
     ],
