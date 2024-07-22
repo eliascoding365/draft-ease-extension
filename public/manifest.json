@@ -7,7 +7,7 @@
     },
     "description": "Create and save notes easily.",
     "permissions": [
-        "storage"
+        "scripting"
     ],
     "host_permissions": [
         "http://*/*",
