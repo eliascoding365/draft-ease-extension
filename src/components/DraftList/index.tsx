@@ -42,6 +42,7 @@ display: flex;
   `;
 
 const AlertDialog = styled.h3`
+  margin-top: 24px;
   font-size: 1rem;
   color: white;
   font-weight: 100;
@@ -62,7 +63,7 @@ const DraftList: React.FC = () => {
   }, []);
 
   if (drafts.length === 0) {
-    return <AlertDialog>No drafts available.<Body>Bodynote</Body></AlertDialog>;
+    return <AlertDialog>Any note created.</AlertDialog>;
   }
 
   return (
