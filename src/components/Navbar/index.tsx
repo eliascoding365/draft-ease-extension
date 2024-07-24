@@ -8,7 +8,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   gap: 80px;
-  margin: 15px 15px 20px 15px;
+  padding: 15px 15px 15px 15px;
+  background-color: #1a1a1a;
 `;
 
 
