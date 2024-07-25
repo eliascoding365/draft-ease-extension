@@ -8,8 +8,12 @@ interface NoteValues {
   noteBody: string;
 }
 
+const FormContainer =  styled.div `
+  max-height: 446px;
+`
+
 const TextArea = styled.textarea `
-  padding: 0.25rem 0.75rem 0rem 0.75rem;
+  margin: 6px 2px 2px 2px;
   background-color: transparent;
   font-size: 14px;
   line-height: 1.5rem ;
@@ -19,6 +23,16 @@ const TextArea = styled.textarea `
   outline-offset: 2px;
   width: 100%;
   resize: none;
+`
+
+const TitleInput = styled.input `
+  margin: 14px 2px 2px 2px;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: white;
+  border-style: none;
+  outline: 2px solid transparent;
+  width: 100%;
 `
 
 const NoteBlock: React.FC = () => {
@@ -60,32 +74,28 @@ const NoteBlock: React.FC = () => {
   };
 
   return (
-    <div >
+    <FormContainer >
       <form
         className='mx-3'
         onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <input
+          <TitleInput
             {...register('title', { required: 'Title is required' })}
             type="text"
-            className='
-              py-2 px-3 bg-transparent text-2xl
-              text-white border-none outline-none
-              w-full'
             placeholder='Create title' />
-          {errors.title && <p className="text-red-500">{errors.title.message}</p>}
+          {errors.title && <p className="text-red-500 text-xs">{errors.title.message}</p>}
 
           <TextArea
             {...register('noteBody', { required: 'Note body is required' })}
             rows={11}
             placeholder='Note...' />
-          {errors.noteBody && <p className="text-red-500">{errors.noteBody.message}</p>}
+          {errors.noteBody && <p className="text-red-500 text-xs">{errors.noteBody.message}</p>}
         </div>
-        <div className="flex justify-end items-end mt-6  mr-3 ">
+        <div className="flex justify-end items-end mr-3 ">
           <SaveButton />
         </div>
       </form>
-    </div>
+    </FormContainer>
   );
 }
 
