@@ -8,8 +8,7 @@ body {
     margin: 0;
     min-width: 319px;
     max-width: 319px;
-    border: solid 0.5px white;
-    border-width: 1px;
+    box-shadow: inset 0 0 0 0.5px #30363d;
     min-height: 446px;
 }
 button {

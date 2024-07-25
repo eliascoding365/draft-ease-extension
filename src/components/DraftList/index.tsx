@@ -6,43 +6,63 @@ interface NoteValues {
   noteBody: string;
 }
 
-const DraftsContainer = styled.div``;
+const DraftsContainer = styled.div`
+  max-height: 390px; /* Definindo a altura máxima do contêiner */
+  overflow-y: auto; /* Permitindo rolagem vertical */
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do "polegar" da barra de rolagem ao passar o mouse */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #333; /* Cor do "trilho" da barra de rolagem */
+  }
+`;
 
 const DraftsTitle = styled.h2`
   display: flex;
   justify-content: start;
   font-size: 1.5rem;
-  margin: 2px 15px 2px 15px;
-  color: white
-`
+  margin: 14px 2px 6px 2px;
+  padding-left: 12px;
+  color: white;
+`;
+
 const DraftItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  margin: 2px 15px 2px 15px;
-
+  margin: 4px 12px 2px 14px;
 `;
 
 const Title = styled.h3`
-display: flex;
+  display: flex;
   justify-content: start;
-  margin: 2px 15px 2px 15px;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   font-weight: 500;
 `;
 
 const Body = styled.p`
-display: flex;
+  display: flex;
   justify-content: start;
-  margin: 2px 15px 2px 15px;
+  text-align: justify ;
   font-size: 14px;
   color: white;
   font-weight: 200;
-  `;
+`;
 
 const AlertDialog = styled.h3`
-  margin-top: 24px;
+  margin-top: 14px;
   font-size: 1rem;
   color: white;
   font-weight: 100;
@@ -68,7 +88,7 @@ const DraftList: React.FC = () => {
 
   return (
     <DraftsContainer>
-      <DraftsTitle>Drafts</DraftsTitle>
+      <DraftsTitle>My drafts</DraftsTitle>
       {drafts.map((draft, index) => (
         <DraftItem key={index}>
           <Title>{draft.title}</Title>

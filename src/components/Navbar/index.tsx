@@ -9,11 +9,10 @@ const Nav = styled.nav`
   justify-content: center;
   gap: 80px;
   padding: 15px 15px 15px 15px;
-  background-color: #1a1a1a;
+  background-color: #000000;
+  //background-color: trasparent;
+  box-shadow: inset 0 0 0 0.5px #30363d;
 `;
-
-
-
 
 const Navbar: React.FC = () => {
   const [view, setView] = useState<'noteBlock' | 'drafts'>('noteBlock');
